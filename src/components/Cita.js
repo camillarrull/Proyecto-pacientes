@@ -1,0 +1,29 @@
+import React from 'react';
+import PropType from 'prop-types';
+
+
+const Cita = ({ cita, eliminarCita }) => {
+    return (
+        <div className='cita'>
+            <p>Mascota: <span>{cita.mascota}</span></p>
+            <p>Dueno: <span>{cita.dueno}</span></p>
+            <p>Fecha: <span>{cita.fecha}</span></p>
+            <p>Hora: <span>{cita.hora}</span></p>
+            <p>Sintomas: <span>{cita.sintomas}</span></p>
+            <button className='button eliminar u-full-width'
+                onClick={() => eliminarCita(cita.id)}>
+                Eliminar &times;</button>
+
+
+        </div>
+    );
+}
+
+Cita.prototype = {
+    //key: PropType.object.isRequired NO SE DOCUEMENTA
+    cita: PropType.object.isRequired,
+    eliminarCita: PropType.func.isRequired
+
+}
+
+export default Cita;
